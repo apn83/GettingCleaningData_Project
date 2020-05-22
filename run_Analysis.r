@@ -49,3 +49,4 @@ merged <- reshape2::melt(data = merged, id = c("SubId", "Activity"))
 merged <- reshape2::dcast(data = merged, SubId + Activity ~ variable, fun.aggregate = mean)
 # write the table as output
 data.table::fwrite(x = merged, file = "Wearable_computing_dataTidy.csv", quote = FALSE)
+write.table(merged, file = "dataTidy.txt", row.names = FALSE)
